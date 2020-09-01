@@ -6,9 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/splide.min.js"></script>
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/splide-core.min.css">
+    <!-- <script src="js/splide.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="css/splide-core.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
     <script>
@@ -17,11 +16,9 @@
             dataType: 'json',
             type: 'get',
             success: function (data) {
-                console.log("got")
                 $(data.gallery).each(function (index, value) {
-                    $('#slide').append(
-                        // '<li class="splide__slide"> <img src= ' + value.imgurl + ' /> </li>'
-                        '<div class="splide__slide"> <img src= ' + value.imgurl + ' /> </div>'
+                    $('#scrolling-container').append(
+                        '<li> <img src= ' + value.imgurl + ' /> </li>'
                     );
                 })
             }
@@ -32,18 +29,29 @@
 <body>
 
     <div class="container">
-        <div class="overlay"></div>
-        <div class="slide-container splide">
-            <div class="splide__track">
-                <div class="splide__list" id="slide"></div>                
+        <!-- <div class="overlay"></div> -->
+
+        <div class="range-scroll">
+            <div class="bems-scroller scroll-panel">
+                <div class="scroll-content" id="scrolling-container"></div>
             </div>
         </div>
-        <div class="control">
-            <button class="prev" onclick="show(-1)">&lt;</button>
-            <button class="next" onclick="show(+1)">&gt;</button>
-        </div>
+
+        <!-- <div id="featured"></div> -->
+        <form class="rangeSlider">
+            <input class="scroll-range" id="scroll-range" type="range" value="0"/>
+        </form>
+
+        <!-- <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list" id="slide"></ul>                
+            </div>
+        </div> -->
     </div>
 
+
+    
+    <script src="js/script.js"></script>
    
 
 
