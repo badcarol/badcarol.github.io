@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="js/splide.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/splide-core.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script>
         $.ajax({
@@ -15,9 +17,11 @@
             dataType: 'json',
             type: 'get',
             success: function (data) {
+                console.log("got")
                 $(data.gallery).each(function (index, value) {
                     $('#slide').append(
-                        '<li> <img src= ' + value.imgurl + ' /> </li>'
+                        // '<li class="splide__slide"> <img src= ' + value.imgurl + ' /> </li>'
+                        '<div class="splide__slide"> <img src= ' + value.imgurl + ' /> </div>'
                     );
                 })
             }
@@ -28,17 +32,19 @@
 <body>
 
     <div class="container">
-        <div class="slide-container">
-
-            <ul id="slide">
-
-            </ul>
+        <div class="overlay"></div>
+        <div class="slide-container splide">
+            <div class="splide__track">
+                <div class="splide__list" id="slide"></div>                
+            </div>
         </div>
         <div class="control">
             <button class="prev" onclick="show(-1)">&lt;</button>
             <button class="next" onclick="show(+1)">&gt;</button>
         </div>
     </div>
+
+   
 
 
 </body>
