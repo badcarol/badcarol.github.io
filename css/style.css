@@ -13,6 +13,56 @@
   background:url(../images/foreskin.png) no-repeat 100%;
 }
 
+.main {
+  padding: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.items.active {
+  background: rgba(255,255,255,0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+.item {
+  display: inline-block;
+  background: skyblue;
+  min-height: 250px;
+  min-width: 150px;
+
+}
+
+#featured{
+  position: absolute;
+  z-index:20;
+  left:0;
+  top:0;
+  width:730px;
+  height:250px;
+  background-color:red;
+  clip-path: polygon(10% 0, 101% 0, 55% 100%, 0 100%, 0 54%);
+  cursor: pointer;
+}
+
+
+
+
+/* 
 .bems-scroller {
   display: flex;
   height: 250px;
@@ -22,7 +72,7 @@
 .bems-scroller #scrolling-container {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-x: -moz-scrollbars-none;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -44,15 +94,19 @@
   padding: 20px 0;
   width: 500px;
 }
+.rangeSlider2{
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 500px;
+}
 input[type="range"] {
   background: #1e1e1e;
   border-bottom: 1px solid #4b4b4b;
   border-top: 1px solid #060606;
   height: 10px;
-  width: 100%;
+  width: 50%;
   -moz-appearance: none;
   -webkit-appearance: none;
-  border-radius: 3px;
 }
 input[type="range"]:focus {
   outline: none;
@@ -69,16 +123,4 @@ input::-webkit-slider-thumb {
   -moz-appearance: none;
   -webkit-appearance: none;
   border-radius: 10px;
-}
-
-#featured{
-  position: absolute;
-  z-index:20;
-  left:0;
-  top:0;
-  width:730px;
-  height:250px;
-  background-color:red;
-  clip-path: polygon(10% 0, 101% 0, 55% 100%, 0 100%, 0 54%);
-  cursor: pointer;
-}
+} */

@@ -1,47 +1,28 @@
-// document.addEventListener( 'DOMContentLoaded', function () {
-//     new Splide( '.splide', {
-//         type: 'loop',
-//         perPage: 6,
-//         focus: 'center',
-//         autoWidth:'true',
-//         trimSpace: false,
-//         drag: true,
-//         direction:'ltr'
-//     } ).mount();
-// });
+const slider = document.querySelector('.items');
+let isDown = false;
+let startX;
+let scrollLeft;
 
-var scroll = document.getElementById("scroll-range");
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+//   console.log(walk);
+});
 
-scroll.oninput = function () {
-	var panel = document.getElementById("scrolling-container");	
-    var total = panel.scrollWidth - panel.offsetWidth;
-    
-    var percentage = total*(this.value/100);    	
-    // console.log(total);
-    
-	panel.scrollLeft = percentage;
-	// console.log(percentage);
-}
-
-// Swipe slider
-// var featured = document.getElementById("featured");
-// if( "ontouchstart" in window ) {
-//     var touchStart = function(evt) {
-//         var startTime = (new Date()).getTime();
-//         var startX = evt.changedTouches[0].pageX;
-//         var touchEnd = function(evt) {
-//             document.removeEventListener("touchend", touchEnd);
-//             var diffX = evt.changedTouches[0].pageX - startX;
-//             var elapsed = (new Date()).getTime() - startTime;
-//             console.log( "Swiped " + diffX + " pixels in " + elapsed + " milliseconds" );
-//             if( elapsed < 200 && Math.abs(diffX) > 50 ) {
-//                 ( diffX < 0 ) ? slideright() : slideleft();
-//             }
-//         }
-//         document.addEventListener("touchend", touchEnd);
-//     };
-//     featured.addEventListener("touchstart", touchStart);
-// }
-
-var max_left = -600;
-$(".range-scroll" ).draggable({ axis: "x" });

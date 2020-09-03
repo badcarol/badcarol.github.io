@@ -6,8 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="js/splide.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="css/splide-core.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
 
     <script>
@@ -17,8 +15,8 @@
             type: 'get',
             success: function (data) {
                 $(data.gallery).each(function (index, value) {
-                    $('#scrolling-container').append(
-                        '<li> <img src= ' + value.imgurl + ' /> </li>'
+                    $('.items').append(
+                        '<div class="item"> <img src= ' + value.imgurl + ' /> </div>'
                     );
                 })
             }
@@ -31,16 +29,20 @@
     <div class="container">
         <!-- <div class="overlay"></div> -->
 
-        <div class="range-scroll">
-            <div class="bems-scroller scroll-panel">
-                <div class="scroll-content" id="scrolling-container"></div>
+        <div class="grid-item main">
+            <div class="items">
             </div>
         </div>
 
-        <!-- <div id="featured"></div> -->
+
+        <!-- <div class="range-scroll">
+            <div class="bems-scroller scroll-panel">
+                <div class="scroll-content" id="scrolling-container"></div>
+            </div>
+        </div>       
         <form class="rangeSlider">
             <input class="scroll-range" id="scroll-range" type="range" value="0"/>
-        </form>
+        </form> -->
 
         <!-- <div class="splide">
             <div class="splide__track">
