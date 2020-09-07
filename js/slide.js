@@ -30,7 +30,7 @@ const move = (e) => {
     slider.scrollLeft = scrollLeft - dist;  
     activeClass();  
 
-    console.log(slider.scrollLeft + ',' + dist)
+    console.log(slider.scrollLeft )
     
 }
 
