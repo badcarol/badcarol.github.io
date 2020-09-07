@@ -58,7 +58,7 @@
         },
         {
             "id": 10,
-            "imgurl": "",
+            "imgurl": "images/holder.png",
             "alt": "",
             "landingurl": "",
             "holder":true
