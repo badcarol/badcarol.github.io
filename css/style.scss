@@ -19,6 +19,25 @@ body {
 	position: relative;
 }
 
+.overlay{
+	background:url("../images/foreskin.png");
+	width:970px;
+	height:250px;
+	position: absolute;
+	z-index:9;
+	left:0;
+	top:0;
+}
+
+.draggable{
+	width:600px;
+	height:250px;
+	position: absolute;
+	z-index:10;
+	left:0;
+	clip-path: polygon(16% 0, 100% 0, 64% 100%, 0 100%, 0% 38%);
+}
+
 .items {
 	position: relative;
 	width: 100%;

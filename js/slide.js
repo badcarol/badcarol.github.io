@@ -1,6 +1,7 @@
 let isDown = false;
 let startX;
 let scrollLeft;
+const dragArea = document.querySelector('.draggable');
 const slider = document.querySelector('.items');
 // const item = document.getElementsByClassName('item')[2];
 const outerContent = document.querySelector('.wrapper');
@@ -40,7 +41,7 @@ const activeClass = () =>{
         const liPosX = li[i].offsetLeft;
         finalPosX = liPosX - slider.scrollLeft;
         
-        if(finalPosX >= 230 && finalPosX <=400){
+        if(finalPosX >= 150 && finalPosX <= 300){
             li[i].classList.add('active');
             li[i].classList.add('scale-up-center');
         }else{
@@ -51,26 +52,25 @@ const activeClass = () =>{
 }
 
 (() => {
-	slider.addEventListener('mousedown', start);
-	slider.addEventListener('touchstart', start);
 
-	slider.addEventListener('mousemove', move);
-    slider.addEventListener('touchmove', move);
+    dragArea.addEventListener('mousedown', start);
+	dragArea.addEventListener('touchstart', start);
 
-	slider.addEventListener('mouseleave', end);
-	slider.addEventListener('mouseup', end);
-    slider.addEventListener('touchend', end);   
+	dragArea.addEventListener('mousemove', move);
+    dragArea.addEventListener('touchmove', move);
+
+	dragArea.addEventListener('mouseleave', end);
+	dragArea.addEventListener('mouseup', end);
+    dragArea.addEventListener('touchend', end); 
+	// slider.addEventListener('mousedown', start);
+	// slider.addEventListener('touchstart', start);
+
+	// slider.addEventListener('mousemove', move);
+    // slider.addEventListener('touchmove', move);
+
+	// slider.addEventListener('mouseleave', end);
+	// slider.addEventListener('mouseup', end);
+    // slider.addEventListener('touchend', end);   
    
    
 })();
-
-
-var carousel = $('#carousel'),
-    threshold = 150,
-    slideWidth = 500,
-    dragStart, 
-    dragEnd;
-
-$('#next').click(function(){ shiftSlide(-1) })
-$('#prev').click(function(){ shiftSlide(1) })
-

@@ -4,55 +4,51 @@
             "id": 1,
             "imgurl": "images/copy-first.png",
             "alt": "Preview",
-            "landingurl": ""
+            "landingurl": "",
+            "holder":true
         },
         {
             "id": 2,
+            "imgurl": "images/copy-last.png",
+            "alt": "Preview",
+            "landingurl": "",
+            "holder":true
+        },
+        {
+            "id": 3,
             "imgurl": "images/doc-coast.jpg",
             "alt": "mov1",
             "landingurl": "landing1"
         },
         {
-            "id": 3,
+            "id": 4,
             "imgurl": "images/doc-god.jpg",
             "alt": "mov2",
             "landingurl": "landing2"
         },
         {
-            "id": 4,
+            "id": 5,
             "imgurl": "images/doc-louise.jpg",
             "alt": "mov3",
             "landingurl": "landing3"
         },
         {
-            "id": 5,
+            "id": 6,
             "imgurl": "images/drama-incident.jpg",
             "alt": "mov3",
             "landingurl": "landing3"
         },
         {
-            "id": 6,
+            "id": 7,
             "imgurl": "images/drama-secret.jpg",
             "alt": "mov3",
             "landingurl": "landing3"
         },
         {
-            "id": 7,
+            "id": 8,
             "imgurl": "images/drama-wentworth.jpg",
             "alt": "mov3",
             "landingurl": "landing3"
-        },
-        {
-            "id": 8,
-            "imgurl": "images/express-ballers.jpg",
-            "alt": "mov3",
-            "landingurl": "landing3"
-        },
-        {
-            "id": 9,
-            "imgurl": "images/copy-last.png",
-            "alt": "preview",
-            "landingurl": ""
         }
     ]
 }
