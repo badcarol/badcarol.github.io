@@ -38,14 +38,14 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background: tomato;
   width: 158px;
   height: 200px;
   line-height: 130px;
 }
 
-.item:last-child {
+.item:last-child, .item:first-child {
   margin-right: 5px;
+  width: 240px;
 }
 
 .item.active {
