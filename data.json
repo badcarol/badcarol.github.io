@@ -6,14 +6,7 @@
             "alt": "Preview",
             "landingurl": "",
             "holder":true
-        },
-        {
-            "id": 2,
-            "imgurl": "images/copy-last.png",
-            "alt": "Preview",
-            "landingurl": "",
-            "holder":true
-        },
+        },       
         {
             "id": 3,
             "imgurl": "images/doc-coast.jpg",
@@ -55,6 +48,13 @@
             "imgurl": "images/express-ballers.jpg",
             "alt": "mov3",
             "landingurl": "landing3"
-        }
+        },
+         {
+            "id": 2,
+            "imgurl": "images/copy-last.png",
+            "alt": "Preview",
+            "landingurl": "",
+            "holder":true
+        },
     ]
 }
