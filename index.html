@@ -17,6 +17,7 @@
             type: 'get',
             success: function (data) {
                 $(data.gallery).each(function (index, value) {
+                   
                     $('.items').append(
                         '<div class="item" id=' + value.id + '><img src= ' + value.imgurl + ' alt= ' + value.alt + '/> </div>'
                     );

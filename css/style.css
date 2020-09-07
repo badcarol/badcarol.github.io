@@ -36,14 +36,16 @@ body {
 }
 
 .items {
+  overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 70%;
   height: 210px;
   overflow: hidden;
   white-space: nowrap;
   font-size: 0;
   cursor: pointer;
   padding: 20px 0;
+  padding-right: 100px;
 }
 
 .items.active {
@@ -61,11 +63,6 @@ body {
   width: 158px;
   height: 200px;
   line-height: 130px;
-}
-
-.item:last-child, .item:first-child {
-  margin-right: 5px;
-  width: 240px;
 }
 
 .item.active {
