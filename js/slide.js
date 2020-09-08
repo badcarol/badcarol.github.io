@@ -3,6 +3,7 @@ let startX;
 let scrollLeft;
 const dragArea = document.querySelector('.draggable');
 const slider = document.querySelector('.items');
+const range = document.getElementById('range');
 // const item = document.getElementsByClassName('item')[2];
 const outerContent = document.querySelector('.wrapper');
 
@@ -17,7 +18,6 @@ const end = () => {
 const start = (e) => {
   isDown = true;
   slider.classList.add('active');
-//   item.classList.remove('active');
   startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
   scrollLeft = slider.scrollLeft;	
 }
@@ -28,9 +28,13 @@ const move = (e) => {
     const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
     const dist = (x - startX);
     slider.scrollLeft = scrollLeft - dist;  
+    range.value = slider.scrollLeft;
     activeClass();  
+    
+}
 
-    console.log(slider.scrollLeft )
+const move2 = (e) => { 
+    slider.scrollLeft = range.value;
     
 }
 
@@ -62,6 +66,8 @@ const activeClass = () =>{
 	dragArea.addEventListener('mouseleave', end);
 	dragArea.addEventListener('mouseup', end);
     dragArea.addEventListener('touchend', end); 
+
+    range.addEventListener('input', move2)
 	// slider.addEventListener('mousedown', start);
 	// slider.addEventListener('touchstart', start);
 
