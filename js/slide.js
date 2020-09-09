@@ -4,7 +4,6 @@ let scrollLeft;
 // const dragArea = document.querySelector('.draggable');
 const slider = document.querySelector('.items');
 const range = document.getElementById('range');
-const item = document.querySelectorAll(".item");
 const outerContent = document.querySelector('.wrapper');
 
 
@@ -41,17 +40,18 @@ const move2 = (e) => {
 
 
 const activeClass = () => {
+    const li = document.querySelectorAll(".item");
     let finalPosX;
-    for (var i = 0; i < item.length; i++) {
-        const itemPosX = item[i].offsetLeft;
-        finalPosX = itemPosX - slider.scrollLeft;
+    for (var i = 0; i < li.length; i++) {
+        const liPosX = li[i].offsetLeft;
+        finalPosX = liPosX - slider.scrollLeft;
 
         if (finalPosX >= 150 && finalPosX <= 300) {
-            item[i].classList.add('active');
-            item[i].classList.add('scale-up-center');
+            li[i].classList.add('active');
+            li[i].classList.add('scale-up-center');
         } else {
-            item[i].classList.remove('active');
-            item[i].classList.remove('scale-up-center');
+            li[i].classList.remove('active');
+            li[i].classList.remove('scale-up-center');
         }
     }
 }
