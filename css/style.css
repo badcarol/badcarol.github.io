@@ -1,7 +1,7 @@
 body {
   color: #333;
   text-align: center;
-  background: #222;
+  background: #111;
   margin: 0;
 }
 
@@ -12,14 +12,17 @@ body {
   position: relative;
 }
 
-.overlay {
-  background: url("../images/foreskin.png");
-  width: 970px;
+.overlayRight {
+  background: url("../images/foreskin-right.png");
+  background-size: 100%;
+  width: 590px;
   height: 250px;
   position: absolute;
   z-index: 9;
-  left: 0;
+  right: 0;
   top: 0;
+  -webkit-clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .draggable {
@@ -30,17 +33,6 @@ body {
   left: 0;
   -webkit-clip-path: polygon(16% 0, 100% 0, 64% 100%, 0 100%, 0% 38%);
           clip-path: polygon(16% 0, 100% 0, 64% 100%, 0 100%, 0% 38%);
-}
-
-.handler1 {
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  background-image: url("../images/draw.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  bottom: 0;
-  left: 30px;
 }
 
 .barBg {
@@ -124,9 +116,19 @@ body {
 }
 
 input[type=range] {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
   width: 60%;
   height: 10px;
   -webkit-appearance: none;
+  outline: none;
+  z-index: 12;
+  background: #333;
+}
+
+input[type=range]:focus {
+  outline: none;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -147,5 +149,9 @@ input[type=range]::-webkit-slider-thumb {
   background-size: 100%;
   cursor: pointer;
   margin-top: -15px;
+}
+
+input[type=range]::-webkit-focus-outer {
+  border: 0;
 }
 /*# sourceMappingURL=style.css.map */
