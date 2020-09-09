@@ -56,10 +56,6 @@ const activeClass = () => {
     }
 }
 
-const clickthrough = (e) => {
-    console.log(e)
-
-}
 
 (() => {
 
