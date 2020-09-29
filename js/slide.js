@@ -1,7 +1,7 @@
 let isDown = false;
 let startX;
 let scrollLeft;
-// const dragArea = document.querySelector('.draggable');
+const dragArea = document.querySelector('.draggable');
 const slider = document.querySelector('.items');
 const range = document.getElementById('range');
 const outerContent = document.querySelector('.wrapper');
@@ -59,15 +59,15 @@ const activeClass = () => {
 
 (() => {
 
-    slider.addEventListener('mousedown', start);
-    slider.addEventListener('touchstart', start);
+    dragArea.addEventListener('mousedown', start);
+    dragArea.addEventListener('touchstart', start);
 
-    slider.addEventListener('mousemove', move);
-    slider.addEventListener('touchmove', move);
+    dragArea.addEventListener('mousemove', move);
+    dragArea.addEventListener('touchmove', move);
 
-    slider.addEventListener('mouseleave', end);
-    slider.addEventListener('mouseup', end);
-    slider.addEventListener('touchend', end);
+    dragArea.addEventListener('mouseleave', end);
+    dragArea.addEventListener('mouseup', end);
+    dragArea.addEventListener('touchend', end);
 
     range.addEventListener('input', move2);
 

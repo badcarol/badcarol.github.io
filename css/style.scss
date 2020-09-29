@@ -18,24 +18,65 @@ body {
 }
 
 .overlayRight{
-	background:url("../images/foreskin-right.png");
+	background:url("../images/foreskin.png");
 	background-size:100%;
-	width:590px;
+	width:970px;
 	height:250px;
 	position: absolute;
 	z-index:9;
 	right:0;
 	top:0;
-	clip-path: polygon(55% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+// .draggable{
+// 	width: 347px;
+//     height: 230px;
+//     position: absolute;
+//     z-index: 10;
+//     left: 78px;
+//     background-color: purple;
+//     opacity: 0.5;	
+// }
+// .draggable:before{
+// 	content: '';
+// 	position: absolute;
+// 	top:0;
+// 	left:0;
+// 	width:100px;
+// 	height:230px;
+// 	transform: skew(-10deg);
+// 	background-color:red;
+// 	opacity:0.5;
+// }
+
 .draggable{
-	width:600px;
-	height:250px;
+	width: 347px;
+    height: 220px;
+    position: absolute;
+    z-index: 10;
+    left: 80px;
+    top: 0;
+   
+}
+.draggable:before{
+	content: '';
+	width: 347px;
+    height: 84px;
 	position: absolute;
-	z-index:10;
-	left:0;
-	clip-path: polygon(16% 0, 100% 0, 64% 100%, 0 100%, 0% 38%);
+	border: none;
+    left: -426px;
+    border-right: 6vw solid transparent;
+    border-top: 10.5vw solid transparent;
+}
+.draggable:after{
+	content: '';
+    position: absolute;
+    width: 347px;
+    height: 225px;
+    left: 149px;
+    top: 0;
+    -webkit-transform: skew(-54deg);
+    transform: skew(-54deg);
 }
 
 
