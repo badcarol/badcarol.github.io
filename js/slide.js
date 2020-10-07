@@ -16,7 +16,6 @@ function onInit(){
     dragArea.addEventListener('mouseleave', end, false);
     dragArea.addEventListener('mouseup', end, false);
     dragArea.addEventListener('touchend', end, false);
-
     range.addEventListener('input', move2);
    
 

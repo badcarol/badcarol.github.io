@@ -17,7 +17,7 @@
             success: function (data) {
                 $(data.gallery).each(function (index, value) {
                     $('.items').append(
-                        '<a class="item" href=' + value.landingurl + ' id=' + value.id + '><img src=' + value.imgurl + ' alt=' + value.alt + ' /></a > '
+                        '<a class="item" target="_blank" href=' + value.landingurl + ' id=' + value.id + '><img src=' + value.imgurl + ' alt=' + value.alt + ' /></a > '
                     );
 
                     // $('.glide__slides').append(
