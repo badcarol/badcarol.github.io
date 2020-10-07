@@ -27,57 +27,37 @@ body {
 	right:0;
 	top:0;
 }
-
-// .draggable{
-// 	width: 347px;
-//     height: 230px;
-//     position: absolute;
-//     z-index: 10;
-//     left: 78px;
-//     background-color: purple;
-//     opacity: 0.5;	
-// }
-// .draggable:before{
-// 	content: '';
-// 	position: absolute;
-// 	top:0;
-// 	left:0;
-// 	width:100px;
-// 	height:230px;
-// 	transform: skew(-10deg);
-// 	background-color:red;
-// 	opacity:0.5;
-// }
-
-.draggable{
+.draggable {
 	width: 347px;
-    height: 220px;
-    position: absolute;
-    z-index: 10;
-    left: 80px;
-    top: 0;
-   
-}
-.draggable:before{
+	height: 220px;
+	position: absolute;
+	z-index: 10;
+	left: 80px;
+	top: 0;
+	cursor: grab;
+  }
+  
+  .draggable:before {
 	content: '';
 	width: 347px;
-    height: 84px;
+	height: 84px;
 	position: absolute;
 	border: none;
-    left: -426px;
-    border-right: 6vw solid transparent;
-    border-top: 10.5vw solid transparent;
-}
-.draggable:after{
+	left: -426px;
+	border-right: 6vw solid transparent;
+	border-top: 10.5vw solid transparent;
+  }
+  
+  .draggable:after {
 	content: '';
-    position: absolute;
-    width: 347px;
-    height: 225px;
-    left: 149px;
-    top: 0;
-    -webkit-transform: skew(-54deg);
-    transform: skew(-54deg);
-}
+	position: absolute;
+	width: 347px;
+	height: 225px;
+	left: 149px;
+	top: 0;
+	-webkit-transform: skew(-54deg);
+	transform: skew(-54deg);
+  }
 
 
 .barBg{
@@ -113,6 +93,7 @@ body {
 	width: 158px;
 	height: 200px;
 	line-height: 130px;
+	position: relative;
 	
 	&:last-child {
 		margin-right: 5px;
@@ -120,11 +101,15 @@ body {
 	}
 	&.active{
 		box-shadow: 0px 0px 47px -7px rgba(0,0,0,0.72);
+		z-index:11;
 	}
 	img{
 		width:100%;
 		height:100%;
 	}
+}
+.zindex{
+	z-index:11;
 }
 
 .scale-up-center {

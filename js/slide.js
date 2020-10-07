@@ -1,75 +1,86 @@
-let isDown = false;
-let startX;
-let scrollLeft;
-const dragArea = document.querySelector('.draggable');
-const slider = document.querySelector('.items');
-const range = document.getElementById('range');
-const outerContent = document.querySelector('.wrapper');
+var isDown = false;
+var startX;
+var scrollLeft;
+var finalPosX;
+var dragArea = document.querySelector('.draggable');
+var slider = document.querySelector('.items');
+var range = document.getElementById('range');
+var outerContent = document.querySelector('.wrapper');
 
+function onInit(){
 
-const end = () => {
+    dragArea.addEventListener('mousedown', start, false);
+    dragArea.addEventListener('touchstart', start, false);
+    dragArea.addEventListener('mousemove', move, false);
+    dragArea.addEventListener('touchmove', move, false);
+    dragArea.addEventListener('mouseleave', end, false);
+    dragArea.addEventListener('mouseup', end, false);
+    dragArea.addEventListener('touchend', end, false);
+
+    range.addEventListener('input', move2);
+   
+
+}
+
+function start(e){
+    e.preventDefault();
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft; 
+
+    activeClass();
+
+}
+
+function move(e){
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    var dist = (x - startX);
+    slider.scrollLeft = scrollLeft - dist;
+    range.value = slider.scrollLeft;
+    activeClass();
+}
+
+function end(){
     isDown = false;
     slider.classList.remove('active');
     activeClass();
 
 }
 
-const start = (e) => {
-    e.preventDefault();
-    isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-}
-
-const move = (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
-    const dist = (x - startX);
-    slider.scrollLeft = scrollLeft - dist;
-    range.value = slider.scrollLeft;
-    activeClass();
-
-}
-
-const move2 = (e) => {
+function move2(e){
     slider.scrollLeft = range.value;
     activeClass();
 }
 
 
-const activeClass = () => {
-    const li = document.querySelectorAll(".item");
-    let finalPosX;
+function activeClass() {
+    var li = document.querySelectorAll(".item");
     for (var i = 0; i < li.length; i++) {
-        const liPosX = li[i].offsetLeft;
+        var liPosX = li[i].offsetLeft;
         finalPosX = liPosX - slider.scrollLeft;
 
-        if (finalPosX >= 150 && finalPosX <= 300) {
+        if (finalPosX >= 120 && finalPosX <= 265) {
             li[i].classList.add('active');
             li[i].classList.add('scale-up-center');
+            // delay(i);
         } else {
             li[i].classList.remove('active');
             li[i].classList.remove('scale-up-center');
+            // li[i].classList.remove('zindex');
+            
         }
     }
 }
 
-
-(() => {
-
-    dragArea.addEventListener('mousedown', start);
-    dragArea.addEventListener('touchstart', start);
-
-    dragArea.addEventListener('mousemove', move);
-    dragArea.addEventListener('touchmove', move);
-
-    dragArea.addEventListener('mouseleave', end);
-    dragArea.addEventListener('mouseup', end);
-    dragArea.addEventListener('touchend', end);
-
-    range.addEventListener('input', move2);
+function delay(i){
+    var li = document.querySelectorAll(".item");
+    setTimeout(function(){
+        li[i].classList.add('zindex');
+      },1000);
+}
 
 
-})();
+window.addEventListener("load", onInit);
